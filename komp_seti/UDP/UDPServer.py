@@ -1,7 +1,7 @@
-from socket import *
+from socket import socket, AF_INET, SOCK_DGRAM
 
 
-def server():
+def udp_server():
     serverPort = 12000
     serverSocket = socket(AF_INET, SOCK_DGRAM)
 
@@ -10,7 +10,7 @@ def server():
     print("The server is ready to receive")
 
     # Бесконечный цикл while, который позволяет получать и обрабатывать пакеты от клиентов в неограниченном количестве.
-    while 1:
+    while True:
         message, clientAddress = serverSocket.recvfrom(2048)
 
         # Здесь мы берем введенную клиентом строку и, используя метод upper(), меняем ее символы на заглавные.

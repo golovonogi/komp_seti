@@ -1,7 +1,7 @@
-from socket import *  # Включив эту строку, мы сможем создавать сокеты внутри нашей программы.
+from socket import socket, AF_INET, SOCK_DGRAM
 
 
-def client():
+def udp_client():
     serverName = '127.0.0.1'
     serverPort = 12000
     # Мы не задаем номер порта клиентского сокета при его создании — позволяем это сделать за нас операционной системе.
